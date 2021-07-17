@@ -1,0 +1,7 @@
+ARG_ENABLE('pid', 'pid support', 'no');
+
+if (PHP_PID != 'no') {
+	AC_DEFINE('HAVE_PID', 1, 'pid support enabled');
+
+	EXTENSION('pid', 'pid.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
