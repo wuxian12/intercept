@@ -1,0 +1,7 @@
+ARG_ENABLE('performance', 'performance support', 'no');
+
+if (PHP_PERFORMANCE != 'no') {
+	AC_DEFINE('HAVE_PERFORMANCE', 1, 'performance support enabled');
+
+	EXTENSION('performance', 'performance.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
